@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
+    used this tutorial as basis for JS form validation
+    -->
+    <meta charset="UTF-8">
+    <title>Midterm</title>
+    <style>
+        :root {
+    --error-color: #dc3545;
+        }
+    .form-field.error input {
+    border-color: var(--error-color);
+    }
+
+.form-field small {
+    color: var(--error-color);
+}
+        * {
+          box-sizing: border-box;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 50%;
+          padding: 15px;
+        }
+
+        /* Clear floats after the columns */
+        .row::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .form-field > small {
+            font-weight: bold;
+        }
+
+        .form-field.error > small {
+            color: red;
+        }
+
+        .form-field.success > small {
+            color: green;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width:600px) {
+          .column {
+            width: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+<h1>Midterm Form - Elaina Gurung</h1>
+<form id="form" action="/action_page.php">
+    <fieldset>
+        <legend>Form Validation:</legend>
+        <div class="form-field">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" autocomplete="off">
+            <small></small><br><br>
+        </div>
+
+        <div class="form-field">
+            <label for="email">E-mail:</label><br>
+            <input type="text" id="email" name="email">
+            <small></small><br><br>
+        </div>
+
+        <div class="form-field">
+            <label for="position">Position:</label>
+            <select id="position" name="position">
+                <option value="noselection">Not selected</option>
+                <option value="engineer">Engineer</option>
+                <option value="doctor">Doctor</option>
+                <option value="mechanic">Mechanic</option>
+            </select>
+            <small></small><br><br>
+        </div>
+
+        <div class="form-field" id="type">
+            <p>Type:</p>
+            <input type="radio" name="type" value="full">
+            <label for="type">Full-time</label><br>
+            <input type="radio" name="type" value="part">
+            <label for="type">Part-time</label><br>
+            <small></small><br><br>
+        </div>
+
+        <div class="form-field">
+            <input type="submit" value="Submit">
+        </div>
+
+    </fieldset>
+
+</form>
+
+<p style="text-align:center">Figure 1: Form</p>
+
+<script src="app.js"></script>
+</body>
+</html>
